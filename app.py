@@ -1,10 +1,8 @@
-import os
-import random
 from flask import Flask, render_template, request
-import tensorflow as tf
 from transformers import GPT2Tokenizer, TFGPT2LMHeadModel
 from PIL import Image, ImageDraw, ImageFont
-from io import BytesIO
+import os
+import random
 
 app = Flask(__name__)
 
@@ -68,4 +66,4 @@ def index():
     return render_template('index.html', meme_url=meme_url)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
